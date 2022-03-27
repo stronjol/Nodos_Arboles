@@ -1,5 +1,5 @@
 # Author: jesus ponce
-# GitHub: https://github.com/stronjol23
+# GitHub: https://github.com/stronjo
 # Date: 2022-03-27
 
 from math import inf
