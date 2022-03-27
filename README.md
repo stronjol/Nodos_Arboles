@@ -1,18 +1,18 @@
 # Nodos_Arboles
 Es un programa donde se muestran arboles y nodos con su respectiva profindidad.😊
-python-dijkstra
+#python-dijkstra
 El algoritmo de Dijkstra es un algoritmo para encontrar las rutas más cortas entre nodos en un gráfico ponderado.
 
-Contenido
-¿Cómo usar el módulo dijksta?
-Encuentra todas las distancias y caminos
-Encuentra el camino más corto
-Encuentra la distancia más corta
-Dibujar gráficos
-¿Cómo usar el módulo dijksta?
+##Contenido
+*¿Cómo usar el módulo dijksta?
+ *Encuentra todas las distancias y caminos
+ *Encuentra el camino más corto
+ *Encuentra la distancia más corta
+ *Dibujar gráficos
+ *¿Cómo usar el módulo dijksta?
 Debe mostrar su gráfico como una matriz de adyacencia. Por ejemplo, observe este gráfico con su matriz de adyacencia:
 
-Carreras de resistencia Carreras de resistencia
+#Carreras de resistencia Carreras de resistencia
 
 Tenga en cuenta que al usar la indexación de Python obtiene a = 0, b = 1 ... g = 6, z = 7
 
