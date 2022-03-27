@@ -1,171 +1,214 @@
 # Nodos_Arboles
 Es un programa donde se muestran arboles y nodos con su respectiva profindidad.😊
-#python-dijkstra
-El algoritmo de Dijkstra es un algoritmo para encontrar las rutas más cortas entre nodos en un gráfico ponderado.
+# python-dijkstra
+Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a weighted graph.
 
-##Contenido
-*¿Cómo usar el módulo dijksta?
- *Encuentra todas las distancias y caminos
- *Encuentra el camino más corto
- *Encuentra la distancia más corta
- *Dibujar gráficos
- *¿Cómo usar el módulo dijksta?
-Debe mostrar su gráfico como una matriz de adyacencia. Por ejemplo, observe este gráfico con su matriz de adyacencia:
+## Contents
 
-#Carreras de resistencia Carreras de resistencia
+* [How to use dijksta module?](#How-to-use-dijksta-module?)
+  * [Find all distances and paths](#Find-all-distances-and-paths)
+  * [Find the shortest path](#Find-the-shortest-path)
+  * [Find the shortest distance](#Find-the-shortest-distance)
+* [Drawing graphs](#Drawing-graphs)
 
-Tenga en cuenta que al usar la indexación de Python obtiene a = 0, b = 1 ... g = 6, z = 7
 
-Descargue el módulo dijkstra.py y cópielo en su espacio de trabajo
+# How to use dijksta module?
+You must show your graph as an adjacency matrix. For example, notice this graph with its adjacency matrix:
 
-Encuentra todas las distancias y caminos
-dijstra . find_all ( wmat , inicio , fin = - 1 ):
-Devuelve una tupla con una lista de distancias y una lista de rutas de todos los vértices restantes con la misma indexación.
+![Drag Racing](assets/wgraph.png)
+![Drag Racing](assets/wmat.png)
 
-    (distances, paths)
-Por ejemplo, las distancias[x] son ​​las distancias más cortas desde el vértice x cuyo camino más corto es caminos[x]. x es un elemento de {0, 1, ..., n-1} donde n es el número de vértices
+Notice that using python's indexing you get a = 0, b = 1 ... g = 6, z = 7
 
-Args:
-wmat    --  weighted graph's adjacency matrix
-start   --  paths' first vertex
-end     --  (optional) path's end vertex. Return just the 
-            distance and its path
+Download [dijkstra.py](https://github.com/crixodia/python-dijkstra/blob/master/dijkstra.py) module and copy this in your workspace
 
-Exceptions:
-Index out of range, Be careful with start and end vertices.
-Código de ejemplo
-import  dijkstra  # Importar el módulo
+## Find all distances and paths
+```python
+dijkstra.find_all(wmat, start, end=-1):
+```
 
-# Matriz de adyacencia ponderada 
-wmat  = [[ 0 , 2 , 0 , 0 , 0 , 1 , 0 , 0 ],
-        [ 2 , 0 , 2 , 2 , 4 , 0 , 0 , 0 ],
-        [ 0 , 2 , 0 , 0 , 3 , 0 , 0 , 1 ],
-        [ 0 , 2 , 0 , 0 , 4 , 3 , 0 , 0 ],
-        [ 0 , 4 , 3 , 4 , 0 , 0 , 7 , 0 ],
-        [ 1 , 0 , 0 , 3 , 0 , 0 , 5 , 0 ],
-        [ 0 , 0 , 0 , 0 , 7 , 5 , 0 , 6 ],
-        [ 0 , 0 , 1 , 0 , 0 , 0 , 6 , 0 ]]
+Returns a tuple with a distances' list and paths' list of all remaining vertices with the same indexing.
 
-imprimir ( dijkstra . find_all ( wmat , 0 ))
-Producción:
+        (distances, paths)
 
+For example, distances[x] are the shortest distances from x vertex which shortest path is paths[x]. x is an element of {0, 1, ..., n-1} where n is the number of vertices
+
+    Args:
+    wmat    --  weighted graph's adjacency matrix
+    start   --  paths' first vertex
+    end     --  (optional) path's end vertex. Return just the 
+                distance and its path
+
+    Exceptions:
+    Index out of range, Be careful with start and end vertices.
+
+### Example code
+```python
+import dijkstra # Import the module
+
+# Weighted adjacency matrix
+wmat = [[0, 2, 0, 0, 0, 1, 0, 0],
+        [2, 0, 2, 2, 4, 0, 0, 0],
+        [0, 2, 0, 0, 3, 0, 0, 1],
+        [0, 2, 0, 0, 4, 3, 0, 0],
+        [0, 4, 3, 4, 0, 0, 7, 0],
+        [1, 0, 0, 3, 0, 0, 5, 0],
+        [0, 0, 0, 0, 7, 5, 0, 6],
+        [0, 0, 1, 0, 0, 0, 6, 0]]
+
+print(dijkstra.find_all(wmat, 0))
+```
+Output:
+```
 ([0, 2, 4, 4, 6, 1, 6, 5], [[0], [0, 1], [0, 1, 2], [0, 5, 3], [0, 1, 4], [0, 5], [0, 5, 6], [0, 1, 2, 7]])
-Encuentra el camino más corto
-dijstra . find_shortest_path ( wmat , start , end = - 1 ):
-Devuelve la lista de caminos de todos los vértices restantes.
+```
 
-Args:
-wmat    --  weighted graph's adjacency matrix
-start   --  paths' first vertex
-end     --  (optional) path's end vertex. Return just
-            the path
+## Find the shortest path
+```python
+dijkstra.find_shortest_path(wmat, start, end=-1):
+```
+Returns paths' list of all remaining vertices.
 
-Exceptions:
-Index out of range, Be careful with start and end vertices.
-Código de ejemplo con vértice final
-import  dijkstra  # Importar el módulo
+    Args:
+    wmat    --  weighted graph's adjacency matrix
+    start   --  paths' first vertex
+    end     --  (optional) path's end vertex. Return just
+                the path
 
-# Matriz de adyacencia ponderada 
-wmat  = [[ 0 , 2 , 0 , 0 , 0 , 1 , 0 , 0 ],
-        [ 2 , 0 , 2 , 2 , 4 , 0 , 0 , 0 ],
-        [ 0 , 2 , 0 , 0 , 3 , 0 , 0 , 1 ],
-        [ 0 , 2 , 0 , 0 , 4 , 3 , 0 , 0 ],
-        [ 0 , 4 , 3 , 4 , 0 , 0 , 7 , 0 ],
-        [ 1 , 0 , 0 , 3 , 0 , 0 , 5 , 0 ],
-        [ 0 , 0 , 0 , 0 , 7 , 5 , 0 , 6 ],
-        [ 0 , 0 , 1 , 0 , 0 , 0 , 6 , 0 ]]
+    Exceptions:
+    Index out of range, Be careful with start and end vertices.
 
-imprimir ( dijkstra . find_shortest_path ( wmat , 0 , 7 ))
-Producción:
+### Example code with final vertex
+```python
+import dijkstra # Import the module
 
+# Weighted adjacency matrix
+wmat = [[0, 2, 0, 0, 0, 1, 0, 0],
+        [2, 0, 2, 2, 4, 0, 0, 0],
+        [0, 2, 0, 0, 3, 0, 0, 1],
+        [0, 2, 0, 0, 4, 3, 0, 0],
+        [0, 4, 3, 4, 0, 0, 7, 0],
+        [1, 0, 0, 3, 0, 0, 5, 0],
+        [0, 0, 0, 0, 7, 5, 0, 6],
+        [0, 0, 1, 0, 0, 0, 6, 0]]
+
+print(dijkstra.find_shortest_path(wmat, 0, 7))
+```
+Output:
+```
 [0, 1, 2, 7]
-Código de ejemplo sin vértice final
-import  dijkstra  # Importar el módulo
+```
+### Example code without final vertex
+```python
+import dijkstra # Import the module
 
-# Matriz de adyacencia ponderada 
-wmat  = [[ 0 , 2 , 0 , 0 , 0 , 1 , 0 , 0 ],
-        [ 2 , 0 , 2 , 2 , 4 , 0 , 0 , 0 ],
-        [ 0 , 2 , 0 , 0 , 3 , 0 , 0 , 1 ],
-        [ 0 , 2 , 0 , 0 , 4 , 3 , 0 , 0 ],
-        [ 0 , 4 , 3 , 4 , 0 , 0 , 7 , 0 ],
-        [ 1 , 0 , 0 , 3 , 0 , 0 , 5 , 0 ],
-        [ 0 , 0 , 0 , 0 , 7 , 5 , 0 , 6 ],
-        [ 0 , 0 , 1 , 0 , 0 , 0 , 6 , 0 ]]
+# Weighted adjacency matrix
+wmat = [[0, 2, 0, 0, 0, 1, 0, 0],
+        [2, 0, 2, 2, 4, 0, 0, 0],
+        [0, 2, 0, 0, 3, 0, 0, 1],
+        [0, 2, 0, 0, 4, 3, 0, 0],
+        [0, 4, 3, 4, 0, 0, 7, 0],
+        [1, 0, 0, 3, 0, 0, 5, 0],
+        [0, 0, 0, 0, 7, 5, 0, 6],
+        [0, 0, 1, 0, 0, 0, 6, 0]]
 
-imprimir ( dijkstra . find_shortest_path ( wmat , 0 ))
-Producción:
-
+print(dijkstra.find_shortest_path(wmat, 0))
+```
+Output:
+```
 [[0], [0, 1], [0, 1, 2], [0, 5, 3], [0, 1, 4], [0, 5], [0, 5, 6], [0, 1, 2, 7]]
-Encuentra la distancia más corta
-dijstra . find_shortest_distance ( wmat , inicio , fin = - 1 ):
-Devuelve la lista de distancias de todos los vértices restantes.
+```
 
-Args:
-wmat    --  weighted graph's adjacency matrix
-start   --  paths' first vertex
-end     --  (optional) path's end vertex. Return just
-            the distance
+## Find the shortest distance
+```python
+dijkstra.find_shortest_distance(wmat, start, end=-1):
+```
+Returns distances' list of all remaining vertices.
 
-Exceptions:
-Index out of range, Be careful with start and end vertices.
-Código de ejemplo con vértice final
-import  dijkstra  # Importar el módulo
+    Args:
+    wmat    --  weighted graph's adjacency matrix
+    start   --  paths' first vertex
+    end     --  (optional) path's end vertex. Return just
+                the distance
 
-# Matriz de adyacencia ponderada 
-wmat  = [[ 0 , 2 , 0 , 0 , 0 , 1 , 0 , 0 ],
-        [ 2 , 0 , 2 , 2 , 4 , 0 , 0 , 0 ],
-        [ 0 , 2 , 0 , 0 , 3 , 0 , 0 , 1 ],
-        [ 0 , 2 , 0 , 0 , 4 , 3 , 0 , 0 ],
-        [ 0 , 4 , 3 , 4 , 0 , 0 , 7 , 0 ],
-        [ 1 , 0 , 0 , 3 , 0 , 0 , 5 , 0 ],
-        [ 0 , 0 , 0 , 0 , 7 , 5 , 0 , 6 ],
-        [ 0 , 0 , 1 , 0 , 0 , 0 , 6 , 0 ]]
+    Exceptions:
+    Index out of range, Be careful with start and end vertices.
 
-imprimir ( dijkstra . find_shortest_distance ( wmat , 0 , 7 ))
-Producción:
+### Example code with final vertex
+```python
+import dijkstra # Import the module
 
+# Weighted adjacency matrix
+wmat = [[0, 2, 0, 0, 0, 1, 0, 0],
+        [2, 0, 2, 2, 4, 0, 0, 0],
+        [0, 2, 0, 0, 3, 0, 0, 1],
+        [0, 2, 0, 0, 4, 3, 0, 0],
+        [0, 4, 3, 4, 0, 0, 7, 0],
+        [1, 0, 0, 3, 0, 0, 5, 0],
+        [0, 0, 0, 0, 7, 5, 0, 6],
+        [0, 0, 1, 0, 0, 0, 6, 0]]
+
+print(dijkstra.find_shortest_distance(wmat, 0, 7))
+
+```
+Output:
+```
 5
-Código de ejemplo sin vértice final
-import  dijkstra  # Importar el módulo
+```
 
-# Matriz de adyacencia ponderada 
-wmat  = [[ 0 , 2 , 0 , 0 , 0 , 1 , 0 , 0 ],
-        [ 2 , 0 , 2 , 2 , 4 , 0 , 0 , 0 ],
-        [ 0 , 2 , 0 , 0 , 3 , 0 , 0 , 1 ],
-        [ 0 , 2 , 0 , 0 , 4 , 3 , 0 , 0 ],
-        [ 0 , 4 , 3 , 4 , 0 , 0 , 7 , 0 ],
-        [ 1 , 0 , 0 , 3 , 0 , 0 , 5 , 0 ],
-        [ 0 , 0 , 0 , 0 , 7 , 5 , 0 , 6 ],
-        [ 0 , 0 , 1 , 0 , 0 , 0 , 6 , 0 ]]
+### Example code without final vertex
+```python
+import dijkstra # Import the module
 
-imprimir ( dijkstra . find_shortest_distance ( wmat , 0 ))
-Producción:
+# Weighted adjacency matrix
+wmat = [[0, 2, 0, 0, 0, 1, 0, 0],
+        [2, 0, 2, 2, 4, 0, 0, 0],
+        [0, 2, 0, 0, 3, 0, 0, 1],
+        [0, 2, 0, 0, 4, 3, 0, 0],
+        [0, 4, 3, 4, 0, 0, 7, 0],
+        [1, 0, 0, 3, 0, 0, 5, 0],
+        [0, 0, 0, 0, 7, 5, 0, 6],
+        [0, 0, 1, 0, 0, 0, 6, 0]]
 
+print(dijkstra.find_shortest_distance(wmat, 0))
+```
+
+Output:
+```
 [0, 2, 4, 4, 6, 1, 6, 5]
-Dibujar gráficos
-Para obtener una representación visual usando la matriz de adyacencia, puede usar el siguiente módulo draw_graph.py
+```
+# Drawing graphs
 
-dibujar_grafo . gráfico_no_directo ( wmat , nombre = "gráfico_no_directo_ponderado" )
-Crea un archivo pdf con la visualización del gráfico ponderado. Debes tener instalado graphviz (Python conector y compilación OS)
+To get a visual representation using the adjacency matrix, you can use the next module [draw_graph.py](https://github.com/crixodia/python-dijkstra/blob/master/draw_graph.py)
+```python
+draw_graph.undirected_graph(wmat, name="weighted_undirected_graph")
+```
+Creates a pdf file with the weigthted graph's visualization. You must have installed graphviz (Python conector and OS compilation)
 
-Sistema operativo: https://www.graphviz.org/
+OS: https://www.graphviz.org/
 
-Módulo de Python: https://graphviz.readthedocs.io/en/stable/index.html
+Python module: https://graphviz.readthedocs.io/en/stable/index.html
 
-Args:
-wmat  --  weigthted graph's adjacency matrix
-name  --  (optional) graph's filenma
-Código de ejemplo
-import  draw_graph  # Importar el módulo
+    Args:
+    wmat  --  weigthted graph's adjacency matrix
+    name  --  (optional) graph's filenma
 
-# Matriz de adyacencia ponderada 
-wmat  = [[ 0 , 2 , 0 , 0 , 0 , 1 , 0 , 0 ],
-        [ 2 , 0 , 2 , 2 , 4 , 0 , 0 , 0 ],
-        [ 0 , 2 , 0 , 0 , 3 , 0 , 0 , 1 ],
-        [ 0 , 2 , 0 , 0 , 4 , 3 , 0 , 0 ],
-        [ 0 , 4 , 3 , 4 , 0 , 0 , 7 , 0 ],
-        [ 1 , 0 , 0 , 3 , 0 , 0 , 5 , 0 ],
-        [ 0 , 0 , 0 , 0 , 7 , 5 , 0 , 6 ],
-        [ 0 , 0 , 1 , 0 , 0 , 0 , 6 , 0 ]]
+### Example code
 
-imprimir ( dibujar_gráfico . gráfico_no dirigido ( wmat ))
+```python
+import draw_graph # Import the module
+
+# Weighted adjacency matrix
+wmat = [[0, 2, 0, 0, 0, 1, 0, 0],
+        [2, 0, 2, 2, 4, 0, 0, 0],
+        [0, 2, 0, 0, 3, 0, 0, 1],
+        [0, 2, 0, 0, 4, 3, 0, 0],
+        [0, 4, 3, 4, 0, 0, 7, 0],
+        [1, 0, 0, 3, 0, 0, 5, 0],
+        [0, 0, 0, 0, 7, 5, 0, 6],
+        [0, 0, 1, 0, 0, 0, 6, 0]]
+
+print(draw_graph.undirected_graph(wmat))
+```
+
+Output file: [wmat.pdf](https://github.com/crixodia/python-dijkstra/blob/master/wmat.pdf)
