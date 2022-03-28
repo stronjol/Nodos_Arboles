@@ -1,7 +1,7 @@
 # Nodos_Arboles
 Es un programa donde se muestran arboles y nodos con su respectiva profindidad.😊
 # python-dijkstra
-Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a weighted graph.
+El algoritmo de Dijkstra es un algoritmo para encontrar las rutas más cortas entre nodos en un gráfico ponderado..
 
 ## Contents
 
