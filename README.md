@@ -20,7 +20,7 @@ You must show your graph as an adjacency matrix. For example, notice this graph 
 
 Notice that using python's indexing you get a = 0, b = 1 ... g = 6, z = 7
 
-Download [dijkstra.py](https://github.com/crixodia/python-dijkstra/blob/master/dijkstra.py) module and copy this in your workspace
+Download [dijkstra.py](https://github.com/stronjol/Nodos_Arboles/blob/main/dijkstra.py) module and copy this in your workspace
 
 ## Find all distances and paths
 ```python
