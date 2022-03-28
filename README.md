@@ -211,4 +211,4 @@ wmat = [[0, 2, 0, 0, 0, 1, 0, 0],
 print(draw_graph.undirected_graph(wmat))
 ```
 
-Output file: [wmat.pdf](https://github.com/crixodia/python-dijkstra/blob/master/wmat.pdf)
+Output file: [wmat.pdf](https://github.com/stronjol/Nodos_Arboles/blob/main/wmat.pdf)
