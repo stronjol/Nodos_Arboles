@@ -179,7 +179,7 @@ Output:
 ```
 # Drawing graphs
 
-To get a visual representation using the adjacency matrix, you can use the next module [draw_graph.py](https://github.com/crixodia/python-dijkstra/blob/master/draw_graph.py)
+To get a visual representation using the adjacency matrix, you can use the next module [draw_graph.py](https://github.com/stronjol/Nodos_Arboles/blob/main/draw_graph.py)
 ```python
 draw_graph.undirected_graph(wmat, name="weighted_undirected_graph")
 ```
